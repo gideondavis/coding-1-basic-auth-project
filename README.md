@@ -7,7 +7,7 @@ When you finish, add your names and a demo video link here, then submit one link
 **Group Members:** (list all group members here)
 * [Demo Video (1 per group)](http://includeyourlinkhere)
 
-In this project, you will design and build a **login system web application** in Python using Flask. This project is broken into four major phases, each of which will teach a critical part of building a secure application. You will use GitHub to collaborate with your group and track your progress.  
+In this project, you will design and build a **login system web application** in Python using Flask. This project is broken into four major phases, each of which will teach a critical part of building a secure application. 
 
 #### [Please Fork this Repo to begin](https://github.com/rlj0713/coding-1-game/fork)
 ---
