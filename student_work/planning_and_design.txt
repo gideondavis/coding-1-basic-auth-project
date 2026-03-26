@@ -9,7 +9,7 @@ stormspot, its like pintrest and a weather app where you can veiw photos of stor
 and report the location of storms in your area  
 
 - What style or vibe do you want users to experience?
-weather theme
+weather theme and the vibe of the area the user is in
 
 - What about your app will require a log-in structure?
 signing in to an account
@@ -17,7 +17,7 @@ signing in to an account
 2. CORE FUNCTIONALITY
 -------------------------
 - What are the essential features your app must have?
-an area for users to post photos 
+an area for users to post photos and to veiw the weather
 
 - What optional features could make your app more interactive or personalized?
 diferent styles that a user could pick from and an option to reply to a post
