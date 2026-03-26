@@ -4,32 +4,53 @@ APP PLANNING & DESIGN
 
 1. PROJECT NAME & THEME
 -------------------------
-- What is your app called, and what type of app is it?  
+- What is your app called, and what type of app is it?
+stormspot, its like pintrest and a weather app where you can veiw photos of storms
+and report the location of storms in your area  
+
 - What style or vibe do you want users to experience?
+weather theme
+
 - What about your app will require a log-in structure?
+signing in to an account
 
 2. CORE FUNCTIONALITY
 -------------------------
-- What are the essential features your app must have?  
+- What are the essential features your app must have?
+an area for users to post photos 
+
 - What optional features could make your app more interactive or personalized?
+diferent styles that a user could pick from and an option to reply to a post
 
 3. SECRET OR PERSONALIZED CONTENT
 
 -------------------------
-- What content will users see after logging in?  
+- What content will users see after logging in?
+photos and reports of the area there are in or around  
+
 - Will this content change depending on who is using the app (admin, user, special user?)
+yes, changes depending on user location
 
 4. USER EXPERIENCE (UX) DESIGN
 -------------------------
 - How should your app look and feel?
+it should look like a weather app but it should feel like pintrest
+
 - How will users navigate between pages?
+they will be able to switch tabs in the app to veiw different areas
 
 5. SECURITY FEATURES
 -------------------------
-- What password and authentication rules will you enforce?  
+- What password and authentication rules will you enforce?
+username, account password, and the area you a primarily reporting
+
 - How will you protect secret pages from unauthorized access?
+user data will be stored somewhere people cannot easily access
 
 6. OPTIONAL CREATIVE ENHANCEMENTS
 -------------------------
 - What customization or fun features could users enjoy?
+different app themes
+
 - Are there interactive elements, like games, quizzes, or badges, you could include?
+none that i can think of
