@@ -94,6 +94,7 @@ secret_page = f"""{base_style}
 <h3>Welcome, {{{{ username }}}}!</h3>
 <p>You got into the secret room!</p>
 <a href="/logout"><button>Logout</button></a>
+<a href="/delete"><button>delete</button></a>
 </div>
 """
 
@@ -155,5 +156,8 @@ def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
+@app.route("/delete", methods=["DELETE", "POST"])
+def delete():
+    get_db
 # ---------- RUN ----------
 app.run(host="0.0.0.0", port=5000)
