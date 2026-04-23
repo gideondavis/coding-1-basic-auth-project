@@ -25,6 +25,12 @@ def seed_database():
         ("bob", "SecurePass456@"),
         ("charlie", "MyPassword789#"),
     ]
+
+    sample_entries = [
+        ("nashville", "rain"),
+        ("knoxville", "heavy wind"),
+        ("memphis", "cloudy"),
+    ]
     
     try:
         for username, password in sample_users:
@@ -34,6 +40,13 @@ def seed_database():
                 (username, hashed_pw)
             )
             print(f"Created user: {username}")
+
+        for area, weather_reported in sample_entries:
+            conn.execute(
+                "INSERT INTO entries (area, weather_reported) VALUES (?, ?)",
+                (area, weather_reported)
+            )
+            print(f"Created entry: {area}")
         
         conn.commit()
         print("\nDatabase seeding complete!")
