@@ -8,9 +8,13 @@
 <p>Are you sure you want to delete this entry?</p>
 
 <!-- TODO: Show entry title or content -->
-
+<h3>(( entry['area'] ))</h3>
+<p>{{ entry['weather_reported'] }}</p>
 <!-- TODO: Add a button to confirm delete -->
-
+<form method="POST">
+    <button type="submit" style="background-color: red; color: white;">yes, delete entry</button>
+</form>
 <!-- TODO: Add a cancel link back to dashboard -->
+<a href="{{ url_for('dashboard') }}">cancel</a>
 
 {% endblock %}
