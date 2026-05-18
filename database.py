@@ -16,7 +16,8 @@ def init_db():
     """)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS entries (
-            area TEXT PRIMARY KEY,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            area TEXT,
             weather_reported TEXT
             )
     """)

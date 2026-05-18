@@ -9,13 +9,12 @@
 
     <!-- TODO: Pre-fill title using entry data -->
     <!-- Hint: value="{{ entry['title'] }}" -->
-
-    <!-- TODO: Pre-fill content using entry data -->
-
-    <!-- TODO: Add submit button -->
+    <input name="area" placeholder="area" value="{{ entry['area'] }}"><br>
+    <input name="weather_reported" placeholder="weather_reported" value="{{ entry['weather_reported'] }}"><br>
+    <button type="submit">update Entry</button>
 
 </form>
 
-<!-- TODO: Add a link back to dashboard -->
+<a herf="{{ url_for('dashboard') }}">Back to dashboard</a>
 
 {% endblock %}

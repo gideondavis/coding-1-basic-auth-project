@@ -150,30 +150,42 @@ def create():
 # - Show it in a form
 # - Update the database on submit
 
-"""
+
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
     if "user" not in session:
         return redirect(url_for("login"))
 
-    # TODO: Connect to database
+    conn = get_db()
+    entry = conn.execute(
+        "SELECT * FROM entries WHERE id=?",
+        (id,)
+    ).fetchone()
 
-    # TODO: Get entry WHERE id AND user
-    # This prevents editing other users' data
-
-    # if not entry:
-    #     return "Not allowed"
-
+    if not entry:
+        conn.close()
+        return "Entry not found"
+    
     if request.method == "POST":
-        # TODO: Get updated form data
+        area = request.form["area"].strip()
+        weather_reported = request.form["weather_reported"].strip()
 
-        # TODO: Update database
-        # IMPORTANT: include id AND session["user"]
-
-        # TODO: Commit and close
-
-        return redirect(url_for("dashboard"))
-
+        if not area or not weather_reported:
+            error = "Fields cannot be empty"
+        else:
+            try:
+                conn.execute(
+                    "UPDATE entries SET area=?, weather_reported=? WERE id=?",
+                    (area, weather_reported, id)
+                )
+                conn.commit()
+                conn.close()
+                return redirect(url_for("dashboard"))
+            except:
+                conn.rollback()
+                conn.close()
+                return "error updating entry"
+    conn.close()
     return render_template("edit.html", entry=entry)
 """
 
@@ -196,14 +208,14 @@ def delete(id):
     # TODO: Commit and close
 
     return redirect(url_for("dashboard"))
-"""
+#"""
 
 
+#@app.route("/logout")
 @app.route("/logout")
 def logout():
     session.pop("user", None)
     return redirect(url_for("login"))
 
-# ---------- RUN ----------
 if __name__ == "__main__":
     app.run(debug=True)
