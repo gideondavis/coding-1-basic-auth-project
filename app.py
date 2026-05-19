@@ -175,46 +175,43 @@ def edit(id):
         else:
             try:
                 conn.execute(
-                    "UPDATE entries SET area=?, weather_reported=? WERE id=?",
+                    "UPDATE entries SET area=?, weather_reported=? WHERE id=?",
                     (area, weather_reported, id)
                 )
                 conn.commit()
-                conn.close()
                 return redirect(url_for("dashboard"))
             except:
                 conn.rollback()
-                conn.close()
                 return "error updating entry"
     conn.close()
     return render_template("edit.html", entry=entry)
-"""
 
 # ---------- DELETE ----------
 # TODO: Create a route like /delete/<id>
 # This should:
 # - Delete an entry from the database
 # - Redirect back to dashboard
-"""
-@app.route("/delete/<int:id>")
+
+@app.route("/delete/<int:id>", methods=["GET", "POST"])
 def delete(id):
     if "user" not in session:
         return redirect(url_for("login"))
 
     conn = get_db()
     entry = conn.execute(
-        "SELECT * FROM entries WHERE id=?",
-        (id,)
+        "SELECT * FROM entries WHERE id=?", 
+        (id)
     ).fetchone()
 
     if not entry:
         conn.close()
         return "entry not found"
     
-    if request.method =="POST":
+    if request.method == "POST":
         try:
             conn.execute(
                 "DELETE FROM entries WHERE id=?",
-                (id,)
+                (id)
             )
             conn.commit()
         except:
